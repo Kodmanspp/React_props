@@ -1,3 +1,4 @@
+import style from "./Expirience.module.scss"
 const Expirience = (props) => {
     const {
         lastWorkPlace,
@@ -6,7 +7,7 @@ const Expirience = (props) => {
     } = props;
 
     return (
-        <section>
+        <section className={style.content} >
             <h2>Job Expirience</h2>
             <p>last workplace {lastWorkPlace} </p>
             <p>Expirience in {Expirience} yaers</p>

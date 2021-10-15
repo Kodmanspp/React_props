@@ -1,0 +1,43 @@
+@import "./variables.scss";
+
+body{
+    background-color: rgb(203, 203, 245);
+}
+.App {
+    width: 650px;
+    text-align: left;
+    margin-left: 100px;
+    background-color: rgb(255, 169, 169);
+}
+
+.btn{
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: $btn-main-color;
+    border: none;
+    &:hover{
+        background-color: $btn-hover-color;
+    }
+}
+
+nav {
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        width: 600px;
+    }
+    li{
+        font-size: 22px;
+    }
+    a{
+        display: block;
+        padding: 5px 10px;
+        text-decoration: none;
+    }
+}

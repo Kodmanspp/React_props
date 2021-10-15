@@ -1,0 +1,36 @@
+// @mixin transform {
+//     transform: rotate(90deg);
+//     -webkit-transform: rotate(90ged);
+//     -ms-transform: (rotate(90deg));
+// }
+
+@mixin defoult ($defoult, $hover){
+    border: 1px solid aqua;
+    padding: 5px - 10px + 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    background-color: $defoult;
+    &:hover{
+        background-color: $hover;
+    }
+}
+@mixin  text-style($name, $bold-or-normal, $size, $color) {
+    #{$name}{
+        font-size: $size;
+        font-weight: $bold-or-normal;
+        color: $color;
+    }
+}
+@include text-style(".interpolation", bold, 25px, rgb(59,11,11));
+
+@function invert($color, $amount:100){
+        $inverse: change-color($color, $hue: hue($color) + 180);
+        @return mix($inverse, $color, $amount);
+}
+
+.button{
+    @include defoult(mediumaquamarine,rgb(64, 136, 112));
+    width: 70px;
+    height: 25px;
+    background-color: invert(red, 80%);
+}

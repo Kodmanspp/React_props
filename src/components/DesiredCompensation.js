@@ -1,5 +1,5 @@
 import React from "react";
-
+import style from "./DesiredCompensation.module.scss"
 class DesiredCompensation extends React.Component {
     render() {
         const {
@@ -10,7 +10,7 @@ class DesiredCompensation extends React.Component {
         } = this.props.compensation;
         return (
             <section>
-                <h4>Desired compensation: {kgs} KGS / {usd} USD (hourly rate: {rateKgs} KGS / {rateUsd} USD)</h4>
+                <h4 className={style.text}>Desired compensation: {kgs} KGS / {usd} USD (hourly rate: {rateKgs} KGS / {rateUsd} USD)</h4>
             
             </section>
         )

@@ -1,9 +1,13 @@
-import "./App.css";
+import React from "react";
 import Education from "./components/Education.js"
 import MainInfo from "./components/MainInfo.js";
 import Expirience from "./components/Expirience";
 import Hobbies from "./components/Hobbies";
 import DesiredCompensation from "./components/DesiredCompensation";
+
+import Button from "./components/Button";
+
+import "./App.scss"
 
 function App() {
     const personalData = {
@@ -46,9 +50,6 @@ function App() {
             result.rateUsd = usd.toFixed(2);
             result.rateKgs = kgs.toFixed(0);
 
-
-
-
             result.kgs = result.kgs.toFixed(2);
         }
         else if (currency === "KGS") {
@@ -63,15 +64,23 @@ function App() {
 
             result.usd = result.usd.toFixed(2);
 
-
         }
         return result;
     }
 
     const data = (
         <div className="App">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>about</li>
+                    <li>Works</li>
+                    <li>Contacts</li>
+                </ul>
+            </nav>
+
             <MainInfo
-                fullName={personalData.fullName}
+                fullname={personalData.fullName}
                 age={new Date().getFullYear() - personalData.birthYear}
                 desiredPosition={personalData.desiredPosition}
             />
@@ -85,11 +94,13 @@ function App() {
                 skils={personalData.skils}
             />
             <Hobbies
-                hobbies = {personalData.hobbies}
+                hobbies={personalData.hobbies}
             />
             <DesiredCompensation
                 compensation={getCompensationRate(personalData.desiredCompensation)}
             />
+            <Button />
+            <button className="btn">Hello</button>
         </div>
     );
     return data;
